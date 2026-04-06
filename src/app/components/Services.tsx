@@ -2,49 +2,55 @@ import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { Cake, Heart, Sparkles } from 'lucide-react';
+import infantil from '../../../assets/services/evento_infantil.png';
+import empresarial from '../../../assets/services/evento_empresarial.png';
+import casamiento from '../../../assets/services/evento_casamiento.png';
+import quince from '../../../assets/services/evento_quince.png';
+import cumpleaños from '../../../assets/services/evento_cumpleaños.png';
+import bautismo from '../../../assets/services/evento_bautismo.png';
 
 const services = [
   {
     icon: Cake,
     title: 'Cumpleaños de 15',
     description: 'Mesas dulces elegantes y sofisticadas para celebrar este momento único. Personalizamos cada detalle según tus colores y temática.',
-    color: 'from-pink-400 to-rose-500',
-    image: 'https://images.unsplash.com/photo-1705276920624-cd72e0f89dd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxxdWluY2VhbmVyYSUyMHBhcnR5JTIwZGVzc2VydHN8ZW58MXx8fHwxNzc0ODIxMDIyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    color: 'from-pink-50 to-pink-500',
+    image: quince,
   },
   {
     icon: Heart,
     title: 'Casamientos',
     description: 'Candy bars exclusivos que complementan perfectamente tu gran día. Diseños refinados que sorprenderán a tus invitados.',
-    color: 'from-purple-400 to-indigo-500',
-    image: 'https://images.unsplash.com/photo-1574004897612-c6bbad355614?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY2FuZHklMjB0YWJsZXxlbnwxfHx8fDE3NzQ4MjEwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    color: 'from-purple-100 to-indigo-300',
+    image: casamiento,
   },
   {
     icon: Sparkles,
     title: 'Eventos de Bautismo',
     description: 'Experiencias sensoriales adaptadas con golosinas seleccionadas especialmente. Creamos ambientes inclusivos y seguros.',
-    color: 'from-blue-400 to-cyan-500',
-    image: 'https://images.unsplash.com/photo-1772411534568-1fe0c61b21a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMG1hY2Fyb25zJTIwZGlzcGxheXxlbnwxfHx8fDE3NzQ4MjEwMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    color: 'from-purple-100 to-indigo-300',
+    image: bautismo,
   },
   {
-    icon: Sparkles,
+    icon: Heart,
     title: 'Eventos Infantiles',
     description: 'Experiencias sensoriales adaptadas con golosinas seleccionadas especialmente. Creamos ambientes inclusivos y seguros.',
-    color: 'from-blue-400 to-cyan-500',
-    image: 'https://images.unsplash.com/photo-1772411534568-1fe0c61b21a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMG1hY2Fyb25zJTIwZGlzcGxheXxlbnwxfHx8fDE3NzQ4MjEwMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    color: 'from-yellow-100 to-orange-400',
+    image: infantil,
   },
   {
     icon: Sparkles,
     title: 'Eventos Empresariales',
     description: 'Experiencias sensoriales adaptadas con golosinas seleccionadas especialmente. Creamos ambientes inclusivos y seguros.',
-    color: 'from-blue-400 to-cyan-500',
-    image: 'https://images.unsplash.com/photo-1772411534568-1fe0c61b21a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMG1hY2Fyb25zJTIwZGlzcGxheXxlbnwxfHx8fDE3NzQ4MjEwMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    color: 'from-blue-100 to-blue-500',
+    image: empresarial,
   },
   {
-    icon: Sparkles,
+    icon: Heart,
     title: 'Tu Cumpleaños',
     description: 'Experiencias sensoriales adaptadas con golosinas seleccionadas especialmente. Creamos ambientes inclusivos y seguros.',
-    color: 'from-blue-400 to-cyan-500',
-    image: 'https://images.unsplash.com/photo-1772411534568-1fe0c61b21a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMG1hY2Fyb25zJTIwZGlzcGxheXxlbnwxfHx8fDE3NzQ4MjEwMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    color: 'from-cyan-100 to-cyan-300',
+    image: cumpleaños,
   },
 ];
 

@@ -27,12 +27,13 @@ const testimonials = [
 function TestimonialCard({ testimonial, index }: { testimonial: typeof testimonials[0]; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const initialX = index % 2 === 0 ? -24 : 24;
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      initial={{ opacity: 0, x: initialX }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: initialX }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="bg-white p-8 rounded-3xl shadow-xl relative"
     >
@@ -40,9 +41,9 @@ function TestimonialCard({ testimonial, index }: { testimonial: typeof testimoni
         initial={{ scale: 0 }}
         animate={isInView ? { scale: 1 } : { scale: 0 }}
         transition={{ delay: index * 0.2 + 0.3, type: "spring" }}
-        className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg"
+        className="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg"
       >
-        <Quote className="w-6 h-6 text-white" />
+        <Quote className="w-5 h-6 text-white" />
       </motion.div>
 
       <div className="flex gap-1 mb-4">
@@ -75,7 +76,7 @@ export function Testimonials() {
   const isTitleInView = useInView(titleRef, { once: false, margin: "-100px" });
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={titleRef}

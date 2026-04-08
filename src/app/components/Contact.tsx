@@ -33,11 +33,12 @@ const contactInfo = [
 export function Contact() {
   const titleRef = useRef(null);
   const formRef = useRef(null);
-  const isTitleInView = useInView(titleRef, { once: false, margin: "-100px" });
-  const isFormInView = useInView(formRef, { once: false, margin: "-100px" });
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isFormInView = useInView(formRef, { once: true, margin: "-100px" });
+  const initialOffset = 24;
 
   return (
-    <section className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+    <section className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={titleRef}
@@ -57,8 +58,8 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <motion.div
             ref={formRef}
-            initial={{ opacity: 0, x: -50 }}
-            animate={isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -initialOffset }}
+            animate={isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -initialOffset }}
             transition={{ duration: 0.6 }}
             className="bg-white p-8 rounded-3xl shadow-xl"
           >
@@ -121,8 +122,8 @@ export function Contact() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: initialOffset }}
+            animate={isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: initialOffset }}
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >

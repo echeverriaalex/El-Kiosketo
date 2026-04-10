@@ -1,6 +1,13 @@
 import milka from '../../../assets/products/milka.png';
 import bubbaloo from '../../../assets/products/bubbaloo.png';
 import milkaoreo from '../../../assets/products/milka-oreo.png';
+import blockazo from '../../../assets/products/blockazo.png';
+import rocklets from '../../../assets/products/rocklets.png';
+import rhodesia from '../../../assets/products/rhodesia.png';
+import tita from '../../../assets/products/tita.png';
+import trishot from '../../../assets/products/trishot.png';
+import mogul from '../../../assets/products/mogul.png';
+import saladix from '../../../assets/products/saladix.png';
 
 export const galleryImages = [
   {
@@ -16,7 +23,32 @@ export const galleryImages = [
     title: 'Candy Bar Milka Oreo',
   },
   {
-
+    url: blockazo,
+    title: 'Blockazo',
+  },
+  {
+    url: rocklets,
+    title: 'Rocklets',
+  },
+  {
+    url: rhodesia,
+    title: 'Rhodesia',
+  },
+  {
+    url: tita,
+    title: 'Tita',
+  },
+  {
+    url: trishot,
+    title: 'Trishot',
+  },
+  {    url: mogul,
+    title: 'Mogul',
+  },
+  {    url: saladix,
+    title: 'Saladix',
+  },
+  {
     url: 'https://images.unsplash.com/photo-1574004897612-c6bbad355614?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY2FuZHklMjB0YWJsZXxlbnwxfHx8fDE3NzQ4MjEwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
     title: 'Mesa de Casamiento',
   },

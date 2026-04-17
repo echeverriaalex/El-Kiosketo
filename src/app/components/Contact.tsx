@@ -1,33 +1,61 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+import { PiTiktokLogoBold } from "react-icons/pi";
 
 const contactInfo = [
-  {
-    icon: MapPin,
-    title: 'Ubicación',
-    content: 'Mar del Plata, Buenos Aires, Argentina ',
-    color: 'from-pink-400 to-rose-500',
-  },
   {
     icon: Phone,
     title: 'Teléfono',
     content: '+54 223 540-1000',
+    link: 'tel:+542235401000',
     color: 'from-purple-400 to-indigo-500',
   },
+  {
+    icon: FaWhatsapp,
+    title: 'WhatsApp',
+    content: '+54 223 540-1000',
+    link: 'https://wa.me/542235401000',
+    color: 'from-green-400 to-emerald-500',
+  },
+  {
+    icon: Instagram,
+    title: 'Instagram',
+    content: '@elkiosketo.eventos',
+    link: 'https://www.instagram.com/elkiosketo.eventos',
+    color: 'from-pink-400 to-rose-500',
+  },
+  {
+    icon: PiTiktokLogoBold,
+    title: 'TikTok',
+    content: '@elkiosketo.eventos',
+    link: 'https://www.tiktok.com/@elkiosketo.eventos',
+    color: 'from-slate-900 to-slate-950',
+  },
+
+
+  /*
   {
     icon: Mail,
     title: 'Email',
     content: 'info@dulcesmomentos.com',
     color: 'from-blue-400 to-cyan-500',
   },
+  */
+ {
+    icon: MapPin,
+    title: 'Ubicación',
+    content: 'Mar del Plata, Buenos Aires, Argentina ',
+    color: 'from-pink-400 to-rose-500',
+  },
   {
     icon: Clock,
     title: 'Horario',
     content: 'Lun - Sab: 9:00 - 20:00',
     color: 'from-emerald-400 to-teal-500',
-  },
+  }
 ];
 
 export function Contact() {
@@ -130,12 +158,15 @@ export function Contact() {
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
-                <motion.div
+                <motion.a
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white p-6 rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-xl transition-shadow duration-300"
+                  href={info?.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <div className={`w-14 h-14 bg-gradient-to-br ${info.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
                     <Icon className="w-7 h-7 text-white" />
@@ -144,7 +175,7 @@ export function Contact() {
                     <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
                     <p className="text-gray-600">{info.content}</p>
                   </div>
-                </motion.div>
+                </motion.a>
               );
             })}
 

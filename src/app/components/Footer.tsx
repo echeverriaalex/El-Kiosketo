@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import { Heart, Instagram, Facebook, Mail } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+import { PiTiktokLogoBold } from "react-icons/pi";
 
 export function Footer() {
   return (
@@ -21,6 +23,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Servicios</h3>
             <ul className="space-y-2 text-gray-400">
+              <li className="hover:text-white transition-colors cursor-pointer">Selecciona tu evento</li>
               <li className="hover:text-white transition-colors cursor-pointer">Cumpleaños de 15</li>
               <li className="hover:text-white transition-colors cursor-pointer">Casamientos</li>
               <li className="hover:text-white transition-colors cursor-pointer">Eventos de Autismo</li>
@@ -45,19 +48,39 @@ export function Footer() {
               >
                 <Facebook className="w-6 h-6" />
               </motion.a>
+              {
+                /*
+                <motion.a
+                  whileHover={{ scale: 1.1, y: -3 }}
+                  href="mailto:karlita_1985jui@icloud.com"
+                  className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow"
+                >
+                  <Mail className="w-6 h-6" />
+                  </motion.a>
+                */
+              }
+
               <motion.a
                 whileHover={{ scale: 1.1, y: -3 }}
-                href="mailto:karlita_1985jui@icloud.com"
-                className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow"
+                href="https://wa.me/c/5492235401000"
+                className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow"
               >
-                <Mail className="w-6 h-6" />
+                <FaWhatsapp className="w-6 h-6" />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.1, y: -3 }}
+                href="https://www.tiktok.com/@elkiosketo.eventos"
+                className="w-12 h-12 bg-gradient-to-br from-slate-900 to-slate-950 rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow"
+              >
+                <PiTiktokLogoBold className="w-6 h-6" />
               </motion.a>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2026 Dulces Momentos. Todos los derechos reservados.</p>
+          <p>&copy; 2026 El Kiosketo Eventos. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

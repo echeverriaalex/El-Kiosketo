@@ -26,7 +26,7 @@ export function Footer() {
               <li className="hover:text-white transition-colors cursor-pointer">Selecciona tu evento</li>
               <li className="hover:text-white transition-colors cursor-pointer">Cumpleaños de 15</li>
               <li className="hover:text-white transition-colors cursor-pointer">Casamientos</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Eventos de Autismo</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Eventos de Bautismo</li>
               <li className="hover:text-white transition-colors cursor-pointer">Eventos Corporativos</li>
             </ul>
           </div>

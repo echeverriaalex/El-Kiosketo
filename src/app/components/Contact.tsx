@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Heart } from 'lucide-react';
 import { FaWhatsapp } from "react-icons/fa";
 import { PiTiktokLogoBold } from "react-icons/pi";
 
@@ -34,8 +34,13 @@ const contactInfo = [
     link: 'https://www.tiktok.com/@elkiosketo.eventos',
     color: 'from-slate-900 to-slate-950',
   },
-
-
+  {
+    icon: Facebook,
+    title: 'Facebook',
+    content: '@elkiosketo.eventos',
+    link: 'https://www.facebook.com/profile.php?id=100089980947356',
+    color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+  },
   /*
   {
     icon: Mail,
@@ -43,8 +48,24 @@ const contactInfo = [
     content: 'info@dulcesmomentos.com',
     color: 'from-blue-400 to-cyan-500',
   },
+  {
+    icon: MapPin,
+    title: 'Ubicación',
+    content: 'Rawson 3274 - Oficina 803, Mar del Plata',
+    color: 'from-pink-400 to-rose-500',
+    link: 'https://maps.app.goo.gl/uCoGRgejNEs5Yyvi7'
+  },
+  {
+    icon: Clock,
+    title: 'Horario',
+    content: 'Lun - Sab: 9:00 - 20:00',
+    color: 'from-emerald-400 to-teal-500',
+  }
   */
- {
+];
+
+const ubicationInfo = [
+  {
     icon: MapPin,
     title: 'Ubicación',
     content: 'Rawson 3274 - Oficina 803, Mar del Plata',
@@ -68,7 +89,7 @@ export function Contact() {
 
   return (
     <section className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-10">
         <motion.div
           ref={titleRef}
           initial={{ opacity: 0, y: 30 }}
@@ -84,7 +105,7 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div
             ref={formRef}
             initial={{ opacity: 0, x: -initialOffset }}
@@ -149,12 +170,11 @@ export function Contact() {
               </motion.button>
             </form>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: initialOffset }}
             animate={isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: initialOffset }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-6 self-center"
           >
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
@@ -182,6 +202,50 @@ export function Contact() {
           </motion.div>
         </div>
 
+        
+        <div className="flex flex-col gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: initialOffset }}
+            animate={isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: initialOffset }}
+            transition={{ duration: 0.6 }}
+            className="bg-red-400 p-2 lg:p-8 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 justify-items-center rounded-2xl"
+          >
+            {ubicationInfo.map((info, index) => {
+              const Icon = info.icon;
+              return (
+                <motion.a
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="w-full max-h-[105px] bg-white p-2 lg:p-6 rounded-2xl shadow-lg flex items-start gap-2 hover:shadow-xl transition-shadow duration-300"
+                  href={info?.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className={`w-[54px] h-[54px] bg-gradient-to-br ${info.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <Icon className="w-full h-full p-3 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
+                    <p className="text-gray-600">{info.content}</p>
+                  </div>
+                </motion.a>
+              );
+            })}
+          </motion.div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d785.9565336047438!2d-57.56020160056171!3d-38.00451571546566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dea58cc8c867%3A0x9469dc40b7895487!2sRawson%203274%2C%20B7600FFR%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1776482030792!5m2!1ses!2sar"
+            width="800"
+            height="600"
+            className="w-full rounded-2xl shadow-xl"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -200,24 +264,7 @@ export function Contact() {
             Agendar Consulta
           </motion.button>
         </motion.div>
-
-
       </div>
     </section>
   );
 }
-
-
-<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d785.9565336047438!2d-57.56020160056171!3d-38.00451571546566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dea58cc8c867%3A0x9469dc40b7895487!2sRawson%203274%2C%20B7600FFR%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1776482030792!5m2!1ses!2sar"
-  width="800"
-  height="600"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-
-
-

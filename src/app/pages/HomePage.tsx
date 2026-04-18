@@ -5,11 +5,14 @@ import { Testimonials } from '../components/Testimonials';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { galleryProductsImages, galleryExperienceImages } from '../utils/GalleryImages';
+import { Demo } from '../components/Demo';
+
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Hero />
+      <Demo />
       <Services />
       <Gallery
         title="Nuestra Galería"

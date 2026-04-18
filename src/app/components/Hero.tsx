@@ -1,6 +1,9 @@
 import { motion } from 'motion/react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
+import logo1 from '../../../assets/logos/logo1.png';
+import logo2 from '../../../assets/logos/logo2.png';
+
 export function Hero() {
   return (
     /*
@@ -13,7 +16,7 @@ export function Hero() {
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-3 gap-10 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,32 +26,50 @@ export function Hero() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-8"
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-3"
           >
             <Sparkles className="w-5 h-5 text-pink-500" />
             <span className="text-sm font-medium text-gray-700">Endulzamos tus momentos especiales</span>
           </motion.div>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
-        >
-          Golosinas para tus
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
-            Eventos Inolvidables
-          </span>
-        </motion.h1>
+
+        <div className="flex justify-center justify-items-center items-center h-75 max-w-full">
+          <motion.img
+            whileHover={{ scale: 1.10 }}
+            transition={{ duration: 0.6 }}
+            src={logo2}
+            alt="Logo El Kiosketo"
+            className="object-cover max-w-full max-h-70"
+          />
+        </div>
+
+
+
+        { 
+          /*
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
+          >
+            Golosinas para tus
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
+              Eventos Inolvidables
+            </span>
+          </motion.h1>
+          */
+        }
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto"
+          className="font-montserrat font-black text-white text-3xl uppercase tracking-tight leading-none"
         >
-          Ofrecemos un servicio de golosinas premium para cumpleaños de 15, casamientos, bautismos, eventos infantiles y empresariales
+          { /* Ofrecemos un servicio de golosinas premium para cumpleaños de 15, casamientos, bautismos, eventos infantiles y empresariales */ }
+          LLENA DE DULZURA TU EVENTO!
         </motion.p>
 
         <motion.div

@@ -55,7 +55,7 @@ const services = [
 ];
 
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
-  const ref = useRef(null);
+  const ref = useRef("services");
   const isInView = useInView(ref, { once: false, margin: "-100px" });
   const Icon = service.icon;
 

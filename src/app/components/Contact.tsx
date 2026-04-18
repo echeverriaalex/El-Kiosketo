@@ -47,8 +47,9 @@ const contactInfo = [
  {
     icon: MapPin,
     title: 'Ubicación',
-    content: 'Mar del Plata, Buenos Aires, Argentina ',
+    content: 'Rawson 3274 - Oficina 803, Mar del Plata',
     color: 'from-pink-400 to-rose-500',
+    link: 'https://maps.app.goo.gl/uCoGRgejNEs5Yyvi7'
   },
   {
     icon: Clock,
@@ -163,7 +164,7 @@ export function Contact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white p-6 rounded-2xl shadow-lg flex items-start gap-2 hover:shadow-xl transition-shadow duration-300"
                   href={info?.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -178,28 +179,45 @@ export function Contact() {
                 </motion.a>
               );
             })}
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gradient-to-br from-pink-500 to-purple-600 p-8 rounded-2xl shadow-xl text-white"
-            >
-              <h4 className="text-2xl font-bold mb-4">¿Listo para empezar?</h4>
-              <p className="mb-6 opacity-90">
-                Agenda una consulta gratuita y descubre cómo podemos hacer tu evento inolvidable
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-purple-600 px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Agendar Consulta
-              </motion.button>
-            </motion.div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="bg-gradient-to-br from-pink-500 to-purple-600 p-8 rounded-2xl shadow-xl text-white"
+        >
+          <h4 className="text-2xl font-bold mb-4">¿Listo para empezar?</h4>
+          <p className="mb-6 opacity-90">
+            Agenda una consulta gratuita y descubre cómo podemos hacer tu evento inolvidable
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-purple-600 px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            Agendar Consulta
+          </motion.button>
+        </motion.div>
+
+
       </div>
     </section>
   );
 }
+
+
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d785.9565336047438!2d-57.56020160056171!3d-38.00451571546566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dea58cc8c867%3A0x9469dc40b7895487!2sRawson%203274%2C%20B7600FFR%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1776482030792!5m2!1ses!2sar"
+  width="800"
+  height="600"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+
+
+

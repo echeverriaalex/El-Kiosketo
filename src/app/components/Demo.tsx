@@ -19,10 +19,10 @@ export function Demo() {
                 className="text-center mb-16"
             >
                 <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-                Mira nuestro servicio en acción
+                    Nosotros en acción
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Te mostramos un vistazo real de como llevamos color, sabor y alegria a cada evento!
+                    Un vistazo real de como llevamos color, sabor y alegria a cada evento!
                 </p>
             </motion.div>
             <div className="overflow-hidden rounded-2xl bg-black shadow-xl">

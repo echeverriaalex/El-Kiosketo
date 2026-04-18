@@ -9,30 +9,33 @@ export function Hero() {
     /*
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
     */
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-500 via-pink-400 to-cyan-500">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{background: 'linear-gradient(to bottom right, #7D5FB2, #E62E8A, #FFCC00, #4DB8B8)'}}>
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob " style={{background: "#FFCC00" }}></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000" style={{background: "#7D5FB2"}}></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000" style={{background: "#E62E8A"}}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-3 gap-10 flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        {
+          /*
           <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-3"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <Sparkles className="w-5 h-5 text-pink-500" />
-            <span className="text-sm font-medium text-gray-700">Endulzamos tus momentos especiales</span>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-3"
+            >
+              <Sparkles className="w-5 h-5 text-pink-500" />
+              <span className="text-sm font-medium text-gray-700">Endulzamos tus momentos especiales</span>
+            </motion.div>
           </motion.div>
-        </motion.div>
-
+          */
+        }
 
         <div className="flex justify-center justify-items-center items-center h-75 max-w-full">
           <motion.img
@@ -66,9 +69,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="font-montserrat font-black text-white text-3xl uppercase tracking-tight leading-none"
+          className="font-montserrat font-black text-white text-3xl uppercase tracking-tight leading-none flex items-center gap-2"
         >
           { /* Ofrecemos un servicio de golosinas premium para cumpleaños de 15, casamientos, bautismos, eventos infantiles y empresariales */ }
+          <Sparkles className="w-10 h-10" style={{color: "#7D5FB2" }} />
           LLENA DE DULZURA TU EVENTO!
         </motion.p>
 
@@ -78,7 +82,7 @@ export function Hero() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer">
+          <button className="group bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer" style={{background: 'linear-gradient(to right, #4DB8B8, #E62E8A)'}}>
             Consultar Ahora
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>

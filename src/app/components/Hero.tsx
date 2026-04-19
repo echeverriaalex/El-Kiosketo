@@ -65,16 +65,41 @@ export function Hero() {
           */
         }
 
-        <motion.p
+        {
+        /*
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="font-montserrat font-black text-white text-3xl uppercase tracking-tight leading-none flex items-center gap-2"
+          >
+            <Sparkles className="w-10 h-10" style={{color: "#7D5FB2" }} />
+            LLENA DE DULZURA TU EVENTO!
+          </motion.p>
+        */ 
+        }
+
+
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="font-montserrat font-black text-white text-3xl uppercase tracking-tight leading-none flex items-center gap-2"
+          transition={{ duration: 0.8 }}
         >
-          { /* Ofrecemos un servicio de golosinas premium para cumpleaños de 15, casamientos, bautismos, eventos infantiles y empresariales */ }
-          <Sparkles className="w-10 h-10" style={{color: "#7D5FB2" }} />
-          LLENA DE DULZURA TU EVENTO!
-        </motion.p>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-3"
+          >
+            <Sparkles className="w-5 h-5 text-pink-500" />
+            <span className="text-sm font-medium text-gray-700 font-montserrat font-black">LLENA DE DULZURA TU EVENTO!</span>
+          </motion.div>
+        </motion.div>
+
+
+
+
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
